@@ -9,18 +9,25 @@ let myModule = {
 };
 
 let renderModule = function () {
-  let data = [],
-    _render = () => {
-      // click listeners for _add and _remove
-    },
-    _add = () => {
-      // Some logic
-    },
-    _remove = () => {
-      // Some logic
-    };
+  let data = [];
+  let _render = () => {
+    // click listeners for _add and _remove
+    if (use) {
+      data;
+      _add();
+      _remove();
+    }
+  };
+  let _add = () => {
+    // Some logic
+  };
+  let _remove = () => {
+    // Some logic
+  };
 
   return {
     render: _render,
   };
 };
+
+console.log(renderModule().render);

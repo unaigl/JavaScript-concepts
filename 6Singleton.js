@@ -45,4 +45,5 @@ let obj1 = obj.getInstance();
 let obj2 = obj.getInstance();
 obj2.start();
 console.log(obj1.currentState());
-console.log(obj2.currentState());
+obj2.stop();
+console.log(obj1.currentState());
