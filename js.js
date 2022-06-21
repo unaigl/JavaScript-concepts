@@ -1,4 +1,12 @@
-// soon more will be added
-// soon more will be added
-// soon more will be added
-// soon more will be added
+const obj = {
+  a: 1,
+  f: () => {
+    console.log(this);
+  },
+};
+
+obj.f();
+
+(() => {
+  console.log(this);
+})();
