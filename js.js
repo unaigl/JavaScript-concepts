@@ -1,12 +1,5 @@
-const obj = {
-  a: 1,
-  f: () => {
-    console.log(this);
-  },
-};
+function palindrome2() {}
 
-obj.f();
-
-(() => {
-  console.log(this);
-})();
+console.log(palindrome2("radar")); //true
+console.log(palindrome2("redder")); //true
+console.log(palindrome2("windows")); //false

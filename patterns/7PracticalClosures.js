@@ -1,7 +1,7 @@
-// is not working as expected
 // Objetive is to achieve 0,1,2 values
 
 function f() {
+  // using var is not working as expected
   for (var i = 0; i < 3; i++) {
     setTimeout(function () {
       console.log(i); // 3, 3, 3

@@ -64,14 +64,14 @@ console.log("getPrototypeOf", Object.getPrototypeOf(x5));
 
 function AUDI(_wheels, _model, _year) {
   // using to call parent constructor
-  Vehicle.call(this, _wheels); // will also override velocity and justAMethod
+  Vehicle.call(this, _wheels); // will also declare velocity and justAMethod
   this.model = _model;
   this.year = _year;
 }
 // we define from which prototype inherit, we've to defined before using vehicle.prototype values
 AUDI.prototype = new Vehicle();
 
-const a5 = new BMW(20, "A5", 2012);
+const a5 = new AUDI(20, "A5", 2012);
 
 console.log("getPrototypeOf", Object.getPrototypeOf(a5));
 
