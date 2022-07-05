@@ -1,4 +1,4 @@
-function palindrome2(str) {
+function palindrome3(str) {
   const str1 = str.split("");
   if (!str1.length % 2) {
     var strA1 = [];
