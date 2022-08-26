@@ -4,6 +4,8 @@
 const numbers = [1, 2, 3];
 numbers[10] = 11;
 numbers[9] = false;
+numbers[9] = null;
+numbers[9] = 0;
 
 for (let i = 0; i < numbers.length; i++) {
   // iterates although values are undefined
@@ -29,7 +31,7 @@ numbers.forEach((num, idx) => {
     10 11 */
 });
 
-// forEach, map ... is not going to iterate with undenined values.
+// forEach, map ... is not going to iterate with undefined values.
 // But, are goingo to iterate with null values.
 
 numbers.map((num, idx) => {

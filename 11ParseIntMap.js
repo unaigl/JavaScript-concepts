@@ -4,8 +4,6 @@
 
 let r1 = ["1", "7", "11"].map(parseInt); //returns [1, NaN, 3]
 
-console.log(result);
-
 // PROBLEM
 // parseInt(num, radix); // default radix 10
 // myArray.map((val, idx, arr) => { })
@@ -16,3 +14,5 @@ let r2 = ["1", "7", "11"].map(parseInt); //returns [1, NaN, 3]
 
 // SOLUTION
 let result = ["1", "7", "11"].map((val) => parseInt(val)); //returns [1, NaN, 3]
+
+console.log(result);

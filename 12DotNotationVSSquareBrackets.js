@@ -13,3 +13,6 @@ console.log(dean[sam.castiel]); // chuck
 console.log(dean.sam.castiel); // fail
 console.log(dean[sam["castiel"]]); // chuck
 console.log(dean[sam[castiel]]); // fail
+
+dean[sam[castiel]] = "a";
+console.log(dean[sam[castiel]]); // fail

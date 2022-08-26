@@ -18,3 +18,10 @@ let a2 = new Array(5) // length
   .map((n) => n * Math.random()); // give to each element a random value
 
 console.log("2", a2);
+
+/*  */
+Array.of(7); // [7]
+Array(7); // array of 7 empty slots
+
+Array.of(1, 2, 3); // [1, 2, 3]
+Array(1, 2, 3); // [1, 2, 3]

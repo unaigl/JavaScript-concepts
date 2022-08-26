@@ -1,4 +1,4 @@
-// ASI, object literals, square bracket syntax, hoisting
+// ASI - Automatic semicolor insertion - object literals, square bracket syntax, hoisting
 // what happens when you run this code? why?
 
 let a = {
