@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Web Workers</h1>
+    </header>
+    <main>
+        <pre id="output"></pre>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', init())
+        function init() {
+            const worker = new Worker('js.js')
+            worker.addEventListener('message', reactToMessage)
+
+            document.getElementById('title').addEventListener('click', () => {
+                worker.postMessage('Good Luck')
+            })
+
+        }
+        function reactToMessage(msg) {
+            console.log(msg.data + 'BaSKET')
+        }
+    </script>
+</body>
+
+</html>

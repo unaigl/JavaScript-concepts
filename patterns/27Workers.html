@@ -22,7 +22,7 @@
         document.addEventListener('DOMContentLoaded', init);
 
         function init() {
-            worker = new Worker('web-work.js');
+            worker = new Worker('27Workers.js');
             worker.addEventListener('message', workerMessaged);
             worker.addEventListener('error', workerError);
 
@@ -38,7 +38,7 @@
         function workerMessaged(ev) {
             let data = ev.data;
 
-            output.textContent += JSON.stringify(data, null, 2) + '\n';
+            output.textContent += JSON.stringify(data, null, 20) + '\n';
         }
 
         function workerError(err) {
