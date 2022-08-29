@@ -19,5 +19,3 @@ function palindrome1(str) {
 console.log(palindrome1("radar")); //true
 console.log(palindrome1("redder")); //true
 console.log(palindrome1("windows")); //false
-console.log(palindrome1("aabaa")); //false
-console.log(palindrome1("aabbaa")); //false
