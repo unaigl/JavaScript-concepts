@@ -1,21 +1,88 @@
-/**
- * Write a function to determine if the supplied string is a palindrome
- * Eg:  radar,  racecar, kayak, and redder are all palidromes
- * They are the spelled same backwards and forwards
- */
+//revealing module pattern
+//Turn "myModule" into a "renderModule" that only exposes the render method
 
-function palindrome1(str) {
-  // let reverseStr = str.split('').reverse().join('')
+let myModule = {
+  data: [],
+  render: () => {},
+  add: () => {},
+  remove: () => {},
+};
 
-  let compareDigits = Math.floor(str.length / 2);
-  if (
-    str.substring(0, compareDigits) ===
-    str.split("").reverse().join("").substring(0, compareDigits)
-  )
-    return true;
-  return false;
-}
+let renderModule = function () {
+  let data = [];
+  let _render = () => {
+    // click listeners for _add and _remove
+    _add();
+    _remove();
+    return data;
+  };
+  let _add = () => {
+    // Some logic
+  };
+  let _remove = () => {
+    // Some logic
+  };
 
-console.log(palindrome1("radar")); //true
-console.log(palindrome1("redder")); //true
-console.log(palindrome1("windows")); //false
+  return {
+    render: _render,
+  };
+};
+
+console.log(renderModule().render());
+
+// More complex Ex.
+//revealing module pattern
+//Turn "myModule" into a "renderModule" that only exposes the render method
+
+let renderModule1 = function () {
+  let data = [];
+  let _render = (bool, _text) => {
+    // click listeners for _add and _remove
+    if (bool) {
+      _add(_text);
+    } else {
+      _remove(_text);
+    }
+    return data;
+  };
+  let _add = (_text) => {
+    data[`${_text.at(0)}`] = _text;
+  };
+  let _remove = (_text) => {
+    delete data[`${_text.at(0)}`];
+  };
+
+  return {
+    render: _render,
+  };
+};
+
+let javascript = renderModule1().render(true, "javascript");
+console.log(javascript);
+let node = renderModule1().render(true, "node");
+console.log(node);
+
+// Returning a functions instead of an object
+
+//revealing module pattern
+//Turn "myModule" into a "renderModule" that only exposes the render method
+
+let renderModule2 = function () {
+  let num = 0;
+
+  function set(boolean) {
+    if (boolean) return _add();
+    return _rest();
+  }
+  function _add() {
+    num += 1;
+    return num;
+  }
+  function _rest() {
+    num -= 1;
+    return num;
+  }
+  return set;
+};
+
+console.log(renderModule2()(false));

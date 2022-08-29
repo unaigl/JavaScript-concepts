@@ -32,3 +32,29 @@ let process = (word) => {
 
 log(process("javascript"));
 log(process("hello"));
+
+// Option 2,
+
+function process1(str) {
+  let index = [];
+  let vocals = [];
+  let strArray = str.split(""); // Will be using "strArray" as final array, because revese() and splice() methods does not create a new array
+  strArray.map((el, idx) => {
+    if (el === "a" || el === "e" || el === "i" || el === "o" || el === "u") {
+      index.push(idx);
+      vocals.push(el);
+    }
+  });
+
+  vocals.reverse(); // reversing vocals to splice in "strArray"
+
+  for (let i = 0; i < index.length; i++) {
+    strArray.splice(index[i], 1, vocals[i]);
+  }
+  let reverseStr = strArray.join("");
+  return { original: str, vowelFlip: reverseStr };
+}
+
+log(process1("javascript"));
+log(process1("hello"));
+log(process1("aeiou"));
