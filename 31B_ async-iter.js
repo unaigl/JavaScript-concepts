@@ -1,6 +1,7 @@
 // Objects has not a iterator, has not an order of properties. But, we can add a iterator
 // This is a asynchronous iterator
-let oo = {};
+let urls = ["el padrino", "avatar", "sevilla"]; // Urls (or part of url) to fetch data
+let example = {};
 let myObj = {
   //add an asyncIterator method to my object
   [Symbol.asyncIterator]() {
@@ -12,7 +13,7 @@ let myObj = {
           //return value from the next method must be an object
           //the object should contain a value and a done property
           return new Promise((resolve) => {
-            let obj = { value: this.i, done: false };
+            let obj = { value: urls[this.i], done: false };
             this.i = this.i + 1;
             setTimeout(resolve, 1000, obj);
             //this timeout delay value is not set until next() is called by for await...of
@@ -20,7 +21,7 @@ let myObj = {
         }
         //once our counter value is 3 or more tell whoever called next that we are done
         return new Promise((resolve) => {
-          setTimeout(resolve, 3000, { done: true });
+          setTimeout(resolve, 1000, { done: true });
         });
       },
     };
@@ -30,6 +31,7 @@ let myObj = {
 (async function () {
   for await (let num of myObj) {
     console.log(num);
-    oo[`${num}`] = num;
+    example[`${num.at(0)}`] = num;
   }
+  console.log(example);
 })();
