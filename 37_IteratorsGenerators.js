@@ -3,6 +3,7 @@ ES6 Iterators and Generators
 Arrays, Strings, Maps, Sets, NodeLists - built-in iterators
 {Object} => Iterator => Generator
 ****************************************/
+
 let log = console.log;
 let characters = ["Finn", "Poe", "Rey", "Kylo", "Luke", "Leia"];
 
@@ -36,6 +37,11 @@ function* genny() {
 //log(iter.next());
 //log(iter.next());
 //log(iter.next());
+
+/* 
+    we can create our own iterator using a generator function as "genny". To be able to iterate the object
+    generators works as a wrap of an iterator object to simplify code (as we have seen in previous "genny" function)
+ */
 
 let starwars8 = {
   title: "The Last Jedi",
